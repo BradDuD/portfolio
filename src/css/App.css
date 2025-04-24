@@ -1,0 +1,376 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:wght@400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --title-color: hsl(0, 0%, 95%);
+  --text-color: hsl(0, 0%, 70%);
+  --text-color-light: hsl(0, 0%, 60%);
+  --body-color: hsl(0, 0%, 0%);
+  --container-color: hsl(0, 0%, 8%);
+  --color-light-border: hsla(160, 52%, 71%, .2);
+  --color-beige: hsl(36, 38%, 80%);
+
+ 
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  /* --body-font: "Poppins", sans-serif; */
+  --body-font: "Press Start 2P", system-ui;
+  --second-font: "Press Start 2P", system-ui;
+  --biggest-font-size: 2.75rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1152px) {
+  :root {
+    --biggest-font-size: 3.5rem;
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+}
+
+body {
+  background: #36534A;
+  background: radial-gradient(circle, rgba(54, 83, 74, 1) 0%, rgba(3, 76, 69, 1) 76%, rgba(27, 51, 51, 1) 100%);
+/* background: (158, 23%, 18%, 1);
+  background: linear-gradient(to bottom, hsla(158, 23%, 18%, 0) 0%, hsla(158, 23%, 18%, .013) 9.7%, hsla(158, 23%, 18%, .049) 18.1%, hsla(158, 23%, 18%, .104) 25.5%, hsla(158, 23%, 18%, .175) 31.9%, hsla(158, 23%, 18%, .259) 37.7%, hsla(158, 23%, 18%, .352) 43%, hsla(158, 23%, 18%, .45) 47.9%, hsla(158, 23%, 18%, .55) 52.8%, hsla(158, 23%, 18%, .648) 57.7%, hsla(158, 23%, 18%, .741) 63%, hsla(158, 23%, 18%, .825) 68.7%, hsla(158, 23%, 18%, .896) 75%, hsla(158, 23%, 18%, .951) 82.2%, hsla(158, 23%, 18%, .987) 90.5%, hsl(158, 23%, 18%) 100%);; */
+}
+
+button,
+input {
+  outline: none;
+  border: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--title-color);
+  font-family: var(--second-font);
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem 1rem;
+}
+
+.section__title {
+  text-align: center;
+  font-size: var(--h1-font-size);
+  margin-bottom: 1.5rem;
+}
+
+.main {
+  overflow: hidden;
+  /* For animation ScrollReveal */
+}
+
+.pixel-title {
+  font-family: var(--second-font);
+  font-weight: var(--font-semi-bold);
+  padding: 1.25rem 1.5rem;
+  color: var(--title-color);
+}
+
+.box-shadow{
+  box-shadow: 0 0 0 1px var(--color-light-border);
+}
+
+.center{
+  justify-items: center;
+}
+
+/*=============== HOME ===============*/
+.home {
+  position: relative;
+}
+
+/*=============== BUTTON ===============*/
+.button {
+  background-color: hsla(0, 0%, 100%, .2);
+  padding: 1.25rem 1.5rem;
+  color: var(--title-color);
+  display: inline-flex;
+  align-items: center;
+  column-gap: .5rem;
+  font-family: var(--second-font);
+  font-weight: var(--font-semi-bold);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.button i {
+  font-size: 1.25rem;
+  transition: transform .4s;
+  font-weight: initial;
+}
+
+.button:hover i {
+  transform: translateX(.25rem);
+}
+
+/*=============== FOOTER ===============*/
+.footer {
+  padding-block: 2.5rem;
+  background: var(--container-color);
+}
+
+.footer__content {
+  row-gap: 3.5rem;
+}
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+  width: .6rem;
+  border-radius: .5rem;
+  background-color: hsl(0, 0%, 10%);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: .5rem;
+  background-color: hsl(33, 11%, 33%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(37, 17%, 61%);
+}
+
+/*=============== SCROLL UP ===============*/
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: hsl(0, 0%, 100%, .1);
+  padding: 6px;
+  display: inline-flex;
+  color: var(--title-color);
+  font-size: 1.25rem;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  z-index: var(--z-tooltip);
+  transition: bottom .4s, transform .4s;
+}
+
+.scrollup:hover {
+  transform: translateY(-.25rem);
+  color: var(--text-color);
+}
+
+/* Show Scroll Up */
+.show-scroll {
+  bottom: 3rem;
+}
+
+/*=============== BREAKPOINTS ===============*/
+
+/* For small devices */
+@media screen and (min-width: 340px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+  .footer__data {
+    grid-template-columns: max-content;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 576px) {
+
+  .home__container,
+  .about__container,
+  .explore__content,
+  .join__container {
+    /* grid-template-columns: 380px; */
+    justify-content: center;
+  }
+
+  .footer__data {
+    grid-template-columns: repeat(3, max-content);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .home__cards {
+    grid-template-columns: repeat(2, 240px);
+  }
+
+  .about__container,
+  .join__container {
+    grid-template-columns: repeat(2, 350px);
+    align-items: center;
+  }
+
+  .about__data,
+  .about__data .section__title,
+  .join__data,
+  .join__data .section__title {
+    text-align: initial;
+  }
+
+  .popular__container {
+    grid-template-columns: repeat(2, 240px);
+  }
+
+  .explore__img {
+    width: 100vw;
+  }
+
+  .join__image {
+    order: -1;
+  }
+
+  .footer__content {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+  }
+
+  .footer__group {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer__copy {
+    order: -1;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width:1023px) {
+
+  .nav__close,
+  .nav__toggle {
+    display: none;
+  }
+
+  .nav__list {
+    flex-direction: row;
+    column-gap: 4rem;
+  }
+
+  .popular__container {
+    grid-template-columns: repeat(3, 240px);
+  }
+
+  .footer__data {
+    grid-template-columns: repeat(4, max-content);
+    column-gap: 4.5rem;
+  }
+}
+
+@media screen and (min-width:1152px) {
+
+  .container {
+    margin-inline: auto;
+  }
+
+  .section {
+    padding-block: 7rem 2rem;
+  }
+
+  .nav {
+    height: calc(--header-height) + 1.5rem;
+  }
+
+  .blur-header::after {
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+  }
+
+  .home__container {
+    grid-template-columns: initial;
+    justify-content: initial;
+    row-gap: 4rem;
+    padding-top: 6.5rem;
+  }
+
+  .home__cards {
+    grid-template-columns: repeat(4, 260px);
+  }
+
+  .about__container {
+    grid-template-columns: 500px 460px;
+    column-gap: 8.5rem;
+    padding-block: 1rem;
+  }
+
+  .popular__container {
+    grid-template-columns: repeat(3, 300px);
+    column-gap: 3rem;
+    padding-top: 4rem;
+  }
+
+  .scrollup {
+    right: 3rem;
+  }
+}
