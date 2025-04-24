@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio-livid-tau-20.vercel.app/sitemap.xml
