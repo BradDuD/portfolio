@@ -6,12 +6,13 @@ interface ProjectCardProps {
   description: string;
   techStack: string[];
   link: string;
-  image: string; // nueva prop
+  previewLink?: string;
+  image: string; 
 }
 
-const ProjectCard = ({ title, description, techStack, link, image }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, techStack, link, previewLink, image }: ProjectCardProps) => {
   return (
-    <a href={link} className="project-card box-shadow" target="_blank" rel="noopener noreferrer">
+    <div className="project-card box-shadow">
       <div className="project-content">
         <div className='project-text'>
           <h3>{title}</h3>
@@ -21,12 +22,20 @@ const ProjectCard = ({ title, description, techStack, link, image }: ProjectCard
               <span key={idx} className="tech">{tech}</span>
             ))}
           </div>
+          <div className="buttons-container">
+            {previewLink ? (
+              <a href={previewLink} className="button preview-button" target="_blank" rel="noopener noreferrer">Preview</a>
+            ) : (
+              <button className="button preview-button disabled" disabled>Preview</button>
+            )}
+            <a href={link} className="button github-button" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
         </div>
         <div className='project-img-cont'>
           <img src={image} alt={title} className="project-image" />
         </div>
       </div>
-    </a>
+    </div>
   );
 };
 
