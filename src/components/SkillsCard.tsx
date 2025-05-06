@@ -1,12 +1,12 @@
 interface SkillsCardProps {
     skill: string;
-    iconClass: string;
+    iconSrc: string;
   }
   
-  const SkillsCard = ({ skill, iconClass }: SkillsCardProps) => {
+  const SkillsCard = ({ skill, iconSrc }: SkillsCardProps) => {
     return (
       <div className="skills-card box-shadow">
-        <i className={`${iconClass} skill-icon`}></i>
+        <img src={iconSrc} alt={skill} className="skill-icon" />
         <p className="skill-name">{skill}</p>
       </div>
     );

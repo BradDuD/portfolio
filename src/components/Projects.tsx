@@ -10,7 +10,7 @@ const Projects = () => {
             techStack: ['React', 'Vite', 'API TMDB'],
             link: 'https://github.com/BradDuD/react-movies',
             previewLink: 'https://react-movies-codtwpcdt-brad-dupres-projects.vercel.app',
-            image: '/images/react-movies.png',
+            image: '/images/react-movies.avif',
         },
         {
             title: 'Exotipet',
@@ -18,7 +18,7 @@ const Projects = () => {
             techStack: ['Python', 'Flask', 'MySQL', 'HTML', 'CSS'],
             link: 'https://github.com/BradDuD/i-d-i_exotipet',
             previewLink: '',
-            image: '/images/exotipet.png',
+            image: '/images/exotipet.avif',
         },
         {
             title: 'App Mobile',
@@ -26,7 +26,7 @@ const Projects = () => {
             techStack: ['Java', 'Kotlin', 'PHP', 'SQL'],
             link: 'https://github.com/BradDuD/app_mobile',
             previewLink: '',
-            image: '/images/app-mobile.png',
+            image: '/images/app-mobile.avif',
         },
         // {
         //     title: 'Travel Page',
@@ -34,7 +34,7 @@ const Projects = () => {
         //     techStack: ['JavaScript', 'HTML', 'CSS'],
         //     link: 'https://github.com/BradDuD/travel-website-responsive',
         //     previewLink: '',
-        //     image: '/images/mew.png',
+        //     image: '/images/mew.avif',
         // },
         {
             title: 'Venom Blog',
@@ -42,7 +42,7 @@ const Projects = () => {
             techStack: ['JavaScript', 'HTML', 'CSS'],
             link: 'https://github.com/BradDuD/web-blog-responsive',
             previewLink: 'https://web-blog-responsive.vercel.app',
-            image: '/images/web-blog.png',
+            image: '/images/web-blog.avif',
         },
         {
             title: 'Portafolio',
@@ -50,7 +50,7 @@ const Projects = () => {
             techStack: ['React', 'TypeScript', 'CSS'],
             link: 'https://github.com/BradDuD/portfolio',
             previewLink: 'https://portfolio-brad-dupres-projects.vercel.app',
-            image: '/images/portfolio.png',
+            image: '/images/portfolio.avif',
         }
     ];
 
@@ -92,6 +92,7 @@ const Projects = () => {
 
             {selectedImage && (
                 <div className="modal" onClick={() => setSelectedImage(null)}>
+                <button className="modal-close" onClick={() => setSelectedImage(null)}>✖</button>
                     <img src={selectedImage} alt="Project Preview" className="modal-image animated" />
                 </div>
             )}

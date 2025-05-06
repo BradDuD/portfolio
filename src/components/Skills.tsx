@@ -1,26 +1,24 @@
 import SkillsCard from "./SkillsCard";
 import '../css/Skills.css';
 
-
-
 const Skills = () => {
     const skills = [
-        { skill: 'Python', iconClass: 'devicon-python-plain colored' },
-        { skill: 'Flask', iconClass: 'devicon-flask-original colored' },
-        { skill: 'Django', iconClass: 'devicon-django-plain colored' },
-        { skill: 'HTML', iconClass: 'devicon-html5-plain colored' },
-        { skill: 'CSS', iconClass: 'devicon-css3-plain colored' },
-        { skill: 'JS', iconClass: 'devicon-javascript-plain colored' },
-        { skill: 'TS', iconClass: 'devicon-typescript-plain colored' },
-        { skill: 'React', iconClass: 'devicon-react-original colored' },
-        { skill: 'SQL', iconClass: 'devicon-azuresqldatabase-plain colored' },
-        { skill: 'MySQL', iconClass: 'devicon-mysql-plain colored' },
-        { skill: 'SQLite', iconClass: 'devicon-sqlite-plain colored' },
-        { skill: 'Java', iconClass: 'devicon-java-plain colored' },
-        { skill: 'Docker', iconClass: 'devicon-docker-plain colored' },
-        { skill: 'Azure', iconClass: 'devicon-azure-plain colored' },
-        { skill: 'Git', iconClass: 'devicon-git-plain colored' },
-        { skill: 'GitHub', iconClass: 'devicon-github-plain colored' },
+        { skill: 'Python', iconSrc: '/icons/skills/python-original.svg' },
+        { skill: 'Flask', iconSrc: '/icons/skills/flask-original.svg' },
+        { skill: 'Django', iconSrc: '/icons/skills/django-plain.svg' },
+        { skill: 'HTML', iconSrc: '/icons/skills/html5-plain.svg' },
+        { skill: 'CSS', iconSrc: '/icons/skills/css3-plain.svg' },
+        { skill: 'JS', iconSrc: '/icons/skills/javascript-plain.svg' },
+        { skill: 'TS', iconSrc: '/icons/skills/typescript-plain.svg' },
+        { skill: 'React', iconSrc: '/icons/skills/react-original.svg' },
+        { skill: 'SQL', iconSrc: '/icons/skills/azuresqldatabase-original.svg' },
+        { skill: 'MySQL', iconSrc: '/icons/skills/mysql-original.svg' },
+        { skill: 'SQLite', iconSrc: '/icons/skills/sqlite-original.svg' },
+        { skill: 'Java', iconSrc: '/icons/skills/java-original.svg' },
+        { skill: 'Docker', iconSrc: '/icons/skills/docker-plain.svg' },
+        { skill: 'Azure', iconSrc: '/icons/skills/azure-original.svg' },
+        { skill: 'Git', iconSrc: '/icons/skills/git-original.svg' },
+        { skill: 'GitHub', iconSrc: '/icons/skills/github-original.svg' },
       ];
       
 
@@ -32,7 +30,7 @@ const Skills = () => {
                         <SkillsCard
                             key={i}
                             skill={skill.skill}
-                            iconClass={skill.iconClass}
+                            iconSrc={skill.iconSrc}
                         />
                     ))}
                 </div>
