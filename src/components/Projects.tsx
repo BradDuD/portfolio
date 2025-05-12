@@ -77,7 +77,15 @@ const Projects = () => {
 
             <div className="project-grid">
                 {projects.map((proj, i) => (
-                    <div key={i} onClick={() => setSelectedImage(proj.image)}>
+                    <div
+                        key={i}
+                        onClick={(e) => {
+                            const target = e.target as HTMLElement;
+                            if (target.tagName === 'IMG') {
+                                setSelectedImage(proj.image);
+                            }
+                        }}
+                    >
                         <ProjectCard
                             title={proj.title}
                             description={proj.description}
@@ -90,9 +98,10 @@ const Projects = () => {
                 ))}
             </div>
 
+
             {selectedImage && (
                 <div className="modal" onClick={() => setSelectedImage(null)}>
-                <button className="modal-close" onClick={() => setSelectedImage(null)}>✖</button>
+                    <button className="modal-close" onClick={() => setSelectedImage(null)}>✖</button>
                     <img src={selectedImage} alt="Project Preview" className="modal-image animated" />
                 </div>
             )}

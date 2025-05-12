@@ -11,6 +11,24 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ title, description, techStack, link, previewLink, image }: ProjectCardProps) => {
+  const handlePreviewClick = () => {
+    if (window.gtag) {
+      window.gtag('event', 'click_preview', {
+        event_category: 'projects',
+        event_label: title,
+      });
+    }
+  };
+
+  const handleGitHubClick = () => {
+    if (window.gtag) {
+      window.gtag('event', 'click_github', {
+        event_category: 'projects',
+        event_label: title,
+      });
+    }
+  };
+
   return (
     <div className="project-card box-shadow">
       <div className="project-content">
@@ -24,11 +42,27 @@ const ProjectCard = ({ title, description, techStack, link, previewLink, image }
           </div>
           <div className="buttons-container">
             {previewLink ? (
-              <a href={previewLink} className="button preview-button" target="_blank" rel="noopener noreferrer">Preview</a>
+              <a
+                href={previewLink}
+                className="button preview-button"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handlePreviewClick}
+              >
+                Preview
+              </a>
             ) : (
               <button className="button preview-button disabled" disabled>Preview</button>
             )}
-            <a href={link} className="button github-button" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a
+              href={link}
+              className="button github-button"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleGitHubClick}
+            >
+              GitHub
+            </a>
           </div>
         </div>
         <div className='project-img-cont'>
